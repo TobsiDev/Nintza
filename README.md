@@ -33,12 +33,12 @@ width: 90%;">
 
 <div align="center">
 
-| Name    |      Work      |                       Pic/SocialMedia |
-| :------ | :------------: | ------------------------------------: |
-| Alex    |    Writing     |                                 [img] |
-| Marcus  |  3D modeling   |                                 [img] |
-| Tobsi   |  Programming   | [GitHub](https://github.com/TobsiDev) |
-| William | Arduino Wiring |                                 [img] |
+| Name    |                Work                |                       Pic/SocialMedia |
+| :------ | :--------------------------------: | ------------------------------------: |
+| Alex    | Obstacle/Obby Designer & Marketing |                                   N/A |
+| Marcus  |            3D modeling             |                                 [img] |
+| Tobsi   |            Programming             | [GitHub](https://github.com/TobsiDev) |
+| William |           Arduino Wiring           |                                 [img] |
 
 |                         Links                          |
 | :----------------------------------------------------: |
