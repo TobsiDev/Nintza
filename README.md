@@ -31,12 +31,15 @@ width: 90%;">
 
 # Credits
 
+<div align="center">
+
 | Name    |    Work     |   Pic |
 | :------ | :---------: | ----: |
 | Alex    |   Writing   | [img] |
 | Marcus  | 3D modeling | [img] |
 | Tobsi   | Programming | [img] |
 | William |   Arduino   | [img] |
+</div>
 
 <!--TODO:
 Make Credits table.
