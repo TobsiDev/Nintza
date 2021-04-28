@@ -33,12 +33,16 @@ width: 90%;">
 
 <div align="center">
 
-| Name    |    Work     |   Pic |
-| :------ | :---------: | ----: |
-| Alex    |   Writing   | [img] |
-| Marcus  | 3D modeling | [img] |
-| Tobsi   | Programming | [img] |
-| William |   Arduino   | [img] |
+| Name    |      Work      |                       Pic/SocialMedia |
+| :------ | :------------: | ------------------------------------: |
+| Alex    |    Writing     |                                 [img] |
+| Marcus  |  3D modeling   |                                 [img] |
+| Tobsi   |  Programming   | [GitHub](https://github.com/TobsiDev) |
+| William | Arduino Wiring |                                 [img] |
+
+|                         Links                          |
+| :----------------------------------------------------: |
+| [This GitHub Repo](https://github.com/TobsiDev/Nintza) |
 </div>
 
 <!--TODO:
