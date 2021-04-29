@@ -74,7 +74,7 @@ void setup() // Start/before main loop
     lcd.print("--== Nintza ==--");
     lcd.print("--== NINTZA ==--");*/
 
-    pinMode(BtnInPin INPUT); // Read form Digital 2
+    pinMode(BtnInPin, INPUT); // Read form Digital 2
 }
 
 void loop()
