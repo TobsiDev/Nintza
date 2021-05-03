@@ -45,6 +45,7 @@ LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
 
 // Variables
 char CChar[17];
+char char_arr[16];
 //int Index[17]; // Was used for screen refresh testing
 //int IndexChar; // Was used for screen refresh testing
 
@@ -52,6 +53,7 @@ int BtnInPin = 2;
 int val = 0;
 
 int CurrentMillis;
+int CurrentSec;
 
 void setup() // Start/before main loop
 {
@@ -61,18 +63,20 @@ void setup() // Start/before main loop
     // set up the LCD's number of columns and rows:
     lcd.begin(16, 2);
     // Print a message to the LCD.
-    lcd.print("     Nintza     "); // Only 16 char!!!
-    /*lcd.print("x--==Nintza==--x"); // Other Header/Titels
-    lcd.print(" --==Nintza==-- ");
-    lcd.print("--== Nintza ==--");
 
-    lcd.print("     NINTZA     ");
-    lcd.print("x--==NINTZA==--x");
-    lcd.print(" --==NINTZA==-- ");
-    lcd.print("--== NINTZA ==--");
+    //lcd.print("     Nintza     "); // Only 16 char!!!
+    //lcd.print("x--==Nintza==--x"); // Other Header/Titels
+    //lcd.print(" --==Nintza==-- ");
+    //lcd.print("--== Nintza ==--");
+    //lcd.print("--==:Nintza:==--");
 
-    lcd.print("--== Nintza ==--");
-    lcd.print("--== NINTZA ==--");*/
+    //lcd.print("     NINTZA     ");
+    //lcd.print("x--==NINTZA==--x");
+    //lcd.print(" --==NINTZA==-- ");
+    //lcd.print("--== NINTZA ==--");
+
+    lcd.print("--== Nintza ==--"); // William
+    //lcd.print("--== NINTZA ==--"); // Alex & Marcus
 
     pinMode(BtnInPin, INPUT); // Read form Digital 2
 }
@@ -86,7 +90,7 @@ void loop()
     IsON = digitalRead(BtnInPin);
 
     // Prints it to the "debug screen"
-    Serial.print(IsON);
+    Serial.println(IsON);
 
     // Waits for input, and starts the timer
     if (IsON == 1)
@@ -107,22 +111,46 @@ void loop()
 
         // RESETS MILLIS()
         CurrentMillis = (millis() / 100);
+        CurrentSec = (millis() / 1000);
     }
 
     // Timer while-loop
     while (IsON)
     {
-        val = digitalRead(BtnInPin);
+        val = digitalRead(BtnInPin); // Off button input
 
         // Prints to bottom part of the LCD screen
         lcd.setCursor(0, 1);
-        lcd.print(((millis() / 100) - CurrentMillis));
+        //lcd.print(((millis() / 100) - CurrentMillis));
+
+        /*========================== TOBSI'S TIMER ==========================*/
+        // This is the "clock"
+        int min = (((millis() / 1000) - CurrentSec));     // Minutes
+        min = min / 60;                                   // Minutes
+        int sec = (((millis() / 1000) - CurrentSec));     // Seconds
+        sec = sec % 60;                                   // Seconds
+        int milli = (((millis() / 100) - CurrentMillis)); // Milliseconds
+        milli = milli % 10;                               // Milliseconds
+
+        /*
+         I need all of these, because i can't add multiple numbers 
+         (Minutes, Seconds and Milliseconds) into one string. 
+         This works for some reason ¯\_(ツ)_/¯ .
+        */
+        String str;           // Minutes
+        str = String(min);    // Minutes
+        String str2;          // Seconds
+        str2 = String(sec);   // Seconds
+        String str3;          // Seconds
+        str3 = String(milli); // Seconds
+
+        lcd.print(str + ":" + str2 + "," + str3);
 
         // The OFF Switch
         if (val == 1)
         {
             IsON = false;
-            delay(1000);
+            delay(1000); // 1 Second delay. Without it, the user might start a new "Run" accidentally.
         }
         else
         {
